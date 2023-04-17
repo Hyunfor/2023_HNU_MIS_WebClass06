@@ -8,6 +8,7 @@
 <title>영화 목록</title>
 </head>
 <body>
+
 	<%
 		// 추후 Controllor에서 설정할 값
 		String[] movieList = { "타이타닉", "시네마천국", "혹성탈출", "킹콩", "존윅" };
@@ -25,5 +26,6 @@
 			</c:choose>
 		</c:forEach>
 	</ul>
+	
 </body>
 </html>
