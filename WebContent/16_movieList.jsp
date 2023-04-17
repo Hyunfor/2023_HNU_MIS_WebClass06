@@ -14,19 +14,16 @@
 		pageContext.setAttribute("movieList", movieList);
 	%>
 
-	<table border="1">
-		<tr>
-			<th>index</th>
-			<th>count</th>
-			<th>영화제목</th>
-		</tr>
+	<!--  moviesList의 마지막 영화 제목만 빨강, 굵게 표시 -->
+	<ul>
 		<c:forEach var="movie" items="${movieList }" varStatus="status">
-			<tr>
-				<td>${status.index }</td>
-				<td>${status.count }</td>
-				<td>${movie }</td>
-			</tr>
+			<c:choose>
+				<c:when test="${status.last }">
+					<li style="font-weight:bold; color:red;">${movie }</li>
+				</c:when>
+				<c:otherwise><li>${movie }</li></c:otherwise>
+			</c:choose>
 		</c:forEach>
-	</table>
+	</ul>
 </body>
 </html>
