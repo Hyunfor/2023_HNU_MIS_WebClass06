@@ -19,9 +19,9 @@
 		<c:when test="${param.fruit == 3 }">
 			<span style="color: blue;">바나나</span>
 		</c:when>
-		<c:when test="${param.fruit == 4 }">
-			<span style="color: violet;">포도</span>
-		</c:when>
+		<c:otherwise>
+			<span>그외 과일을 선택하셨습니다.</span>
+		</c:otherwise>
 	</c:choose>
 </body>
 </html>
