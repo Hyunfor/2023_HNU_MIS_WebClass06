@@ -18,8 +18,8 @@
 				<td><input type="password" id="userPwd" name="userPwd"></td>
 			</tr>
 			<tr>
-				<td><label for="admin">관리자</label><input type="radio" id="admin" name="userType" value="1"></td>
-				<td><label for="user">사용자</label><input type="radio" id="user" name="userType" value="2"></td>
+				<td><label for="user">사용자</label><input type="radio" id="user" name="userType" value="1"></td>
+				<td><label for="admin">관리자</label><input type="radio" id="admin" name="userType" value="2"></td>
 			</tr>
 			<tr>
 				<td colspan="2"><input type="submit" value="로그인"></td>
