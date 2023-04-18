@@ -9,9 +9,9 @@
 </head>
 <body>
 	<c:if test="${not empty sessionScope.member}">
-	<p>${member.userId}님이 ${member.userType == 1 ? "관리자" : "유저"}로 로그인하셨습니다.</p>
-	<p>비밀번호: ${member.userPwd}</p>
-	<p>권한: ${member.userType}</p>
-</c:if>
+		<p>${member.userId}님이 ${member.userType == 1 ? "관리자" : "유저"}로 로그인하셨습니다.</p>
+		<p>비밀번호: ${member.userPwd}</p>
+		<p>권한: ${member.userType}</p>
+	</c:if>
 </body>
 </html>

@@ -18,7 +18,7 @@
 			<br>
 
 			<td><label for="admin">관리자</label></td>
-			<td><input type="radio" id="admin" name="userType" value="1" ></td>
+			<td><input type="radio" id="admin" name="userType" value="1"></td>
 			<td><label for="user">일반 사용자</label></td>
 			<td><input type="radio" id="user" name="userType" value="2"></td>
 			<br>
