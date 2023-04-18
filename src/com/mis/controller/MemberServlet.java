@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.mis.javabeans.MemberBean;
 
@@ -17,42 +18,53 @@ import com.mis.javabeans.MemberBean;
 @WebServlet("/MemberServlet")
 public class MemberServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public MemberServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 1 ) MemberBean에 정보 담기
-		MemberBean member = new MemberBean();
-		member.setUserid("admin1234");
-		member.setName("관리자");
-		member.setEmail("naver@gmail.com");
-		member.setNickname("딴돈에 반만 가져가");
-		member.setPhone("010-112-119");
-		member.setUserpwd("1234");
-		
-		// 2 ) request 속성에 MemberBean 담기
-		request.setAttribute("member", member);
-		
-		// 3 ) 페이지 이동
-		RequestDispatcher dispatcher = request.getRequestDispatcher("memberInfo.jsp");
-		dispatcher.forward(request, response);
+	public MemberServlet() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
+
+		// 1. 요청 파라미터에서 로그인 정보 추출
+		String userId = request.getParameter("userId");
+		String userPwd = request.getParameter("userPwd");
+		int userType = Integer.parseInt(request.getParameter("userType"));
+
+		// 2. MemberBean 객체 생성 및 로그인 정보 저장
+		MemberBean member = new MemberBean();
+		member.setUserId(userId);
+		member.setUserPwd(userPwd);
+		member.setUserType(userType);
+
+		// 3. 세션에 로그인 정보 저장
+		HttpSession session = request.getSession();
+		session.setAttribute("member", member);
+
+		// 4. main.jsp 페이지로 이동
+		RequestDispatcher dispatcher = request.getRequestDispatcher("main.jsp");
+		dispatcher.forward(request, response);
 	}
 
 }

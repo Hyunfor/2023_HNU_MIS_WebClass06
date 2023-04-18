@@ -5,7 +5,7 @@ public class MemberBean {
 	// 필드
 	private String userId;
 	private String userPwd;
-	private String userType;
+	private int userType;
 	public String getUserId() {
 		return userId;
 	}
@@ -18,10 +18,10 @@ public class MemberBean {
 	public void setUserPwd(String userPwd) {
 		this.userPwd = userPwd;
 	}
-	public String getUserType() {
+	public int getUserType() {
 		return userType;
 	}
-	public void setUserType(String userType) {
+	public void setUserType(int userType) {
 		this.userType = userType;
 	}
 	
