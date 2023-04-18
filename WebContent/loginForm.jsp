@@ -7,24 +7,24 @@
 <title>LoginForm</title>
 </head>
 <body>
-	<form method="post" action="MemberServlet">
-		<tr>
-			<td><label for="userId">아이디 : </label></td>
-			<td><input type="text" id="userId" name="userId"></td>
-			<br>
-
-			<td><label for="userPwd">비밀번호 : </label></td>
-			<td><input type="password" id="userPwd" name="userPwd"></td>
-			<br>
-
-			<td><label for="admin">관리자</label></td>
-			<td><input type="radio" id="admin" name="userType" value="1"></td>
-			<td><label for="user">일반 사용자</label></td>
-			<td><input type="radio" id="user" name="userType" value="2"></td>
-			<br>
-
-			<td colspan="2"><input type="submit" value="로그인"></td>
-		</tr>
+	<form method="post" action="LoginServlet">
+		<table>
+			<tr>
+				<td><label for="userId">아이디 : </label></td>
+				<td><input type="text" id="userId" name="userId"></td>
+			</tr>
+			<tr>
+				<td><label for="userPwd">비밀번호 : </label></td>
+				<td><input type="password" id="userPwd" name="userPwd"></td>
+			</tr>
+			<tr>
+				<td><label for="admin">관리자</label><input type="radio" id="admin" name="userType" value="1"></td>
+				<td><label for="user">사용자</label><input type="radio" id="user" name="userType" value="2"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="로그인"></td>
+			</tr>
+		</table>
 	</form>
 </body>
 </html>

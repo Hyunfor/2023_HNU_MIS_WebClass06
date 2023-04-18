@@ -15,14 +15,14 @@ import com.mis.javabeans.MemberBean;
 /**
  * Servlet implementation class MemberServlet
  */
-@WebServlet("/MemberServlet")
-public class MemberServlet extends HttpServlet {
+@WebServlet("/LoginServlet")
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public MemberServlet() {
+	public LoginServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -47,24 +47,24 @@ public class MemberServlet extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 
-		// 1. 요청 파라미터에서 로그인 정보 추출
-		String userId = request.getParameter("userId");
-		String userPwd = request.getParameter("userPwd");
-		int userType = Integer.parseInt(request.getParameter("userType"));
+		 // 1. 요청 파라미터에서 로그인 정보 추출
+        String userId = request.getParameter("userId");
+        String userPwd = request.getParameter("userPwd");
+        int userType = Integer.parseInt(request.getParameter("userType"));
 
-		// 2. MemberBean 객체 생성 및 로그인 정보 저장
-		MemberBean member = new MemberBean();
-		member.setUserId(userId);
-		member.setUserPwd(userPwd);
-		member.setUserType(userType);
+        // 2. MemberBean 객체 생성 및 로그인 정보 저장
+        MemberBean member = new MemberBean();
+        member.setUserId(userId);
+        member.setUserPwd(userPwd);
+        member.setUserType(userType);
 
-		// 3. 세션에 로그인 정보 저장
-		HttpSession session = request.getSession();
-		session.setAttribute("member", member);
+        // 3. 세션에 로그인 정보 저장
+        HttpSession session = request.getSession();
+        session.setAttribute("member", member);
 
-		// 4. main.jsp 페이지로 이동
-		RequestDispatcher dispatcher = request.getRequestDispatcher("main.jsp");
-		dispatcher.forward(request, response);
+        // 4. main.jsp 페이지로 이동
+        RequestDispatcher dispatcher = request.getRequestDispatcher("main.jsp");
+        dispatcher.forward(request, response);
 	}
 
 }
