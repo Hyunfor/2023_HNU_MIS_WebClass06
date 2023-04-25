@@ -54,7 +54,7 @@ public class ItemServlet extends HttpServlet {
         String description = request.getParameter("description");
         String user = request.getParameter("user");
 
-        // 2. MemberBean 객체 생성 및 아이템 정보 저장
+        // 2. ItemBean 객체 생성 및 아이템 정보 저장
         ItemBean item = new ItemBean();
         item.setName(name);
         item.setPrice(price);
