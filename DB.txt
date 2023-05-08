@@ -12,7 +12,7 @@ CREATE TABLE MEMBER (
 SELECT * FROM tab;
 SELECT * FROM MEMBER;
 
--- 추가 , 수정 시 COMMIT; 필수. COMMIT;해야 반영됨
+-- 추가 , 수정, 삭제, 변경시 COMMIT; 필수. COMMIT;해야 반영됨
 
 -- 3명의 회원정보 추가
 INSERT INTO MEMBER VALUES('이소미', 'somi', '1234', 'gmd@naver.com','010-2362-5157',0);
@@ -26,7 +26,13 @@ SELECT * FROM MEMBER WHERE ADMIN=0;
 -- 위와 동일한 쿼리문
 SELECT * FROM MEMBER WHERE ADMIN!=1;
 
--- 업데이트 
+-- 업데이트
+SELECT * FROM MEMBER WHERE USERID='somi';
 UPDATE MEMBER SET PHONE ='010-0000-0000'
 WHERE USERID='somi';
+COMMIT;
+
+-- 삭제
+SELECT * FROM MEMBER WHERE USERID='somi';
+DELETE FROM MEMBER WHERE USERID='somi';
 COMMIT;
