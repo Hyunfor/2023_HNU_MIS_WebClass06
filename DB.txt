@@ -1,0 +1,20 @@
+CREATE TABLE MEMBER (
+    NAME VARCHAR2(10),
+    USERID VARCHAR2(10),
+    PWD VARCHAR2(10),
+    EMAIL VARCHAR2(20),
+    PHONE CHAR(13),
+    ADMIN NUMBER(1) DEFAULT 0,
+    -- 0: 사용자, 1: 관리자
+    PRIMARY KEY(USERID)
+);
+
+select * from tab;
+
+-- 3명의 회원정보 추가
+INSERT INTO MEMBER VALUES('이소미', 'somi', '1234', 'gmd@naver.com','010-2362-5157',0);
+INSERT INTO MEMBER VALUES('하상호', 'sang12', '1234', 'hal2@naver.com','010-4321-4567',1);
+INSERT INTO MEMBER VALUES('김윤승', 'light', '1234', 'youn1004@naver.com','010-2362-5157',0);
+COMMIT;
+
+select * from MEMBER;
