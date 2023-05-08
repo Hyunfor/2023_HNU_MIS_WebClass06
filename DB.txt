@@ -9,7 +9,7 @@ CREATE TABLE MEMBER (
     PRIMARY KEY(USERID)
 );
 
-select * from tab;
+SELECT * FROM tab;
 
 -- 3명의 회원정보 추가
 INSERT INTO MEMBER VALUES('이소미', 'somi', '1234', 'gmd@naver.com','010-2362-5157',0);
@@ -17,4 +17,4 @@ INSERT INTO MEMBER VALUES('하상호', 'sang12', '1234', 'hal2@naver.com','010-4
 INSERT INTO MEMBER VALUES('김윤승', 'light', '1234', 'youn1004@naver.com','010-2362-5157',0);
 COMMIT;
 
-select * from MEMBER;
+SELECT * FROM MEMBER;
